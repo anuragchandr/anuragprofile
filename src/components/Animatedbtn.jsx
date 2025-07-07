@@ -1,5 +1,5 @@
 import React from 'react';
-import './Animatedbtn.css'; // Create this file
+import './animatedbtn.css'; // Create this file
 
 const Animatedbtn = () => {
   return (
