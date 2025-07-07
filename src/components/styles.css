@@ -1,0 +1,98 @@
+.c_0_projectsMain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.c_1_cardWrap {
+  
+  animation: cardFadeUp 0.6s ease forwards;
+  opacity: 0;
+  width: 300px;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease; /* this only works after animation */
+  will-change: transform;
+}
+.forhover {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform, box-shadow;
+    width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    background-color: rgba(30, 30, 60, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.forhover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+
+}
+
+.forhover:active {
+  transform: scale(0.98);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.c_2_imgBox {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.c_3_titleText {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.c_4_descText {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.c_5_tagRow {
+  letter-spacing: 0.5px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.c_6_tagBadge {
+
+  background: #0b4374b9;
+  color: white;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+
+
+}
+.c_6_tagBadge:hover {
+  background: #0b4374;
+  cursor:help;
+}
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.c_7_cardFadeUp {
+  animation: cardFadeUp 0.5s ease forwards;
+}
