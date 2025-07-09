@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/home-style.css';
 import SplineEmbed from './components/SplinEmbed';
 import Animatedbtn from './components/Animatedbtn';
+import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div className="home-wrapper">
@@ -19,11 +20,18 @@ function Home() {
           I build sleek, responsive web interfaces and explore intelligent systems—merging design, logic, and curiosity to create digital experiences that grow with me.
         </p>
         <div className="buttons">
-          <button class="animated-button">
-            <span>Contact Me</span>
-            <span></span>
-          </button>
-          <Animatedbtn />
+          
+            <Link to="/contact" className="button-link">
+            <button class="animated-button">
+              <span class="button-text">Contact Me</span>
+              <span class="button-icon">
+              </span>
+            </button>
+              
+            </Link>
+          <Link to="/projects" className="button-link">
+            <Animatedbtn />
+          </Link>
         </div>
       </div>
 

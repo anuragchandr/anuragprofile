@@ -2,20 +2,21 @@ import React from "react";
 import './styles.css'
 const projects = [
   {
-    title: "PORTFOLIO",
-    image: "/portfolio.png",
-    description: "Showcasing Skills",
-    techStack: ["React", "CSS", "Supabase"],
-    link: "https://anuragchandra.netlify.app/"
+    title: "Zestora",
+    image: "/zestora.png",
+    description: "Instagram-like platform for sharing photos and videos",
+    techStack: ["express", "MongoDB", "JavaScript"],
+    link: "#"
   },
   {
-    title: "NUTRI-SETU",
-    image: "/nutrisetu.png",
-    description: "2025 Hackathon",
-    techStack: ["JavaScript", "CSS", "Netlify"],
-    link:"https://byteverse25v.netlify.app/"
-  },
+    title: "VigilEyes",
+    image: "/vigileyes.png",
+    description: "An AI-Powered platform for criminal activity report and analysis",
+    techStack: ["Leaflet", "JavaScript", "Vercel"],
+    link: "https://vigileyes.netlify.app/"
+  }
 ];
+
 
 const techColors = {
   React: "#61DBFB",
@@ -30,7 +31,11 @@ const techColors = {
   MongoDB: "#4db33d",
   Tailwind: "#38bdf8",
   GLSL: "#8e44ad",
-  "D3.js": "#f79f1f"
+  "D3.js": "#f79f1f",
+  express: "#000000",
+  jwt: "#f7df1e",
+  "Vercel": "#000000",
+  Leaflet: "#2c3e50"
 };
 
 function Card({ title, image, description, techStack, link }) {
@@ -61,6 +66,8 @@ function Card({ title, image, description, techStack, link }) {
     </a>
   );
 }
+
+
 export default function ProjectsView() {
   return (
     <div className="c_0_projectsMain">

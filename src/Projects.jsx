@@ -5,6 +5,11 @@ import DecryptedText from './components/DecryptedText';
 import './styles/ShinyText.css';
 import Cards from './components/Card';
 
+import Cards2 from './components/Card2';
+
+import Cards3 from './components/Card3';
+
+
 const ShinyText = ({ text, disabled = false, speed = 5, className = '' }) => {
   const animationDuration = `${speed}s`;
 
@@ -28,7 +33,7 @@ function Projects() {
 
         <div className="project-list">
           <div className="project-list-title">
-            <img src="https://img.icons8.com/?size=100&id=58356&format=png&color=000000" alt="icon" className='icons'/>
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-craft-sewing-flaticons-lineal-color-flat-icons-2.png" alt="icon" className='icons'/>
             <h2 id='craft'>CRAFT</h2>
             <div style={{ marginTop: '4.3rem', fontSize: '0.8rem', textAlign: 'left' , marginLeft: '-6.5rem'}}>
             
@@ -51,12 +56,12 @@ function Projects() {
 
         <div className="project-list">
           <div className="project-list-title">
-            <img src="https://img.icons8.com/?size=100&id=58356&format=png&color=000000" alt="icon" className='icons'/>
-            <h2 id='craft'>CRAFT</h2>
-            <div style={{ marginTop: '4.3rem', fontSize: '0.8rem', textAlign: 'left' , marginLeft: '-6.5rem'}}>
+            <img src="https://img.icons8.com/?size=100&id=jDmeSqkHdfRV&format=png&color=000000" alt="icon" className='icons'/>
+            <h2 id='craft'>IMPACT</h2>
+            <div style={{ marginTop: '4.3rem', fontSize: '0.8rem', textAlign: 'left' , marginLeft: '-8.5rem'}}>
             
             <DecryptedText
-              text="Showcasing Skills"
+              text="Making a Difference with real world solutions"
               animateOn="view"
               speed={100}
               maxIterations={20}
@@ -68,16 +73,17 @@ function Projects() {
             />
             </div>
           </div>
+          <Cards2/>
         </div>
 
         <div className="project-list">
           <div className="project-list-title">
             <img src="https://img.icons8.com/?size=100&id=58356&format=png&color=000000" alt="icon" className='icons'/>
-            <h2 id='craft'>CRAFT</h2>
+            <h2 id='craft'>SPARK</h2>
             <div style={{ marginTop: '4.3rem', fontSize: '0.8rem', textAlign: 'left' , marginLeft: '-6.5rem'}}>
             
             <DecryptedText
-              text="Showcasing Skills"
+              text="Igniting Ideas with help of AI"
               animateOn="view"
               speed={100}
               maxIterations={20}
@@ -89,6 +95,7 @@ function Projects() {
             />
             </div>
           </div>
+          <Cards3/>
         </div>
     </div>
   );

@@ -104,3 +104,14 @@
         transform: none;
     }
 }
+
+
+@media (max-width: 992px) {
+    .home-spline{
+        display: none;
+    }
+    
+    .home-text {
+        backdrop-filter: blur(3px);
+    }
+}

@@ -2,18 +2,11 @@ import React from "react";
 import './styles.css'
 const projects = [
   {
-    title: "PORTFOLIO",
-    image: "/portfolio.png",
+    title: "EFFICA",
+    image: "/effica.png",
     description: "Showcasing Skills",
-    techStack: ["React", "CSS", "Supabase"],
-    link: "https://anuragchandra.netlify.app/"
-  },
-  {
-    title: "NUTRI-SETU",
-    image: "/nutrisetu.png",
-    description: "2025 Hackathon",
-    techStack: ["JavaScript", "CSS", "Netlify"],
-    link:"https://byteverse25v.netlify.app/"
+    techStack: ["React", "express", "MongoDB","JavaScript"],
+    link: "https://efficaprojects.netlify.app/"
   },
 ];
 
@@ -21,6 +14,9 @@ const techColors = {
   React: "#61DBFB",
   "Next.js": "#000000",
   "Three.js": "#ff8f00",
+  "express": "#000000",
+  jwt: "#f7df1e",
+
   "CSS": "#264de4",
   "JavaScript": "#f7df1e",
   "TypeScript": "#3178c6",

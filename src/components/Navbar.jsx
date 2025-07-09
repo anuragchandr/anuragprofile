@@ -7,23 +7,64 @@ function Navbar() {
       <div id="vanta-bg" ></div>
 
       <div className="navbar">
+        
         <div className="logo-container">
           <div className="logo-box">
             <span className="logo-letter">A</span>
           </div>
           <span className="logo-name">Anurag Chandra</span>
         </div>
+
         <nav>
           <ul className="nav-links">
-            <li className="selected"><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="#">skills</a></li>
-            <li><a href="#">Projects</a></li>
+
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => isActive ? "navlink active" : "navlink"}
+              >
+                Home
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => isActive ? "navlink active" : "navlink"}
+              >
+                About
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => isActive ? "navlink active" : "navlink"}
+              >
+                Contact
+              </NavLink>
+            </li>
+
+
+            <li>
+              <NavLink
+                to="/projects"
+                className={({ isActive }) => isActive ? "navlink active" : "navlink"}
+              >
+                Projects
+              </NavLink>
+            </li>
+
           </ul>
         </nav>
+
         <div className="blogs">
-          <a href="/blogs">blogs</a>
+          <NavLink
+            to="/blogs"
+            className={({ isActive }) => isActive ? "navlink active" : "navlink"}
+          >
+            Blogs
+          </NavLink>
         </div>
       </div>
     </div>
