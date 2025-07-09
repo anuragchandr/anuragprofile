@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Github from "./GitHub";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
+import laptopImg from "../../assets/about.png";
 import Toolstack from "./Toolstack";
 
 function About() {
