@@ -10,7 +10,7 @@ import Navbar from './components/Navbar';
 import VantaBg from './components/VantaBg';
 import Projects from './Projects';
 import Home from './Home';
-import About from './components/about/about';
+import About from './components/about/About.jsx';
 import Contacts from './components/contact/Contacts';
 
 function AppContent() {
