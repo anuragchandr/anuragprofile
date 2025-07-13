@@ -71,7 +71,8 @@
 .form-group {
   position: relative;
   margin-bottom: 24px;
-  width: 300px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .form-group input,
@@ -192,3 +193,4 @@
   color: white;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+

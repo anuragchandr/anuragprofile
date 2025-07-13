@@ -384,3 +384,15 @@
     font-size: 10px;
   }
 }
+
+.tools-section{
+    margin: 0 auto;
+  padding: 20px 0;
+  overflow-x: auto;
+}
+
+.github-calendar svg g rect:hover {
+  fill: #a855f7;
+  cursor: pointer;
+}
+

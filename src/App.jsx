@@ -12,6 +12,7 @@ import Projects from './Projects';
 import Home from './Home';
 import About from './components/about/About.jsx';
 import Contacts from './components/contact/Contacts';
+import ComingSoon from './components/blogs/ComingSoon.jsx';
 
 function AppContent() {
   return (
@@ -63,7 +64,7 @@ function App() {
             <Navbar />
             <VantaBg />
             <div className="home-container">
-              <Home />
+             <ComingSoon/>
             </div>
           </>
         } />

@@ -1,12 +1,12 @@
 import React from "react";
 import './styles.css'
 const projects = [
-  {
-    title: "EFFICA",
-    image: "/effica.png",
-    description: "Showcasing Skills",
-    techStack: ["React", "express", "MongoDB","JavaScript"],
-    link: "https://efficaprojects.netlify.app/"
+    {
+    title: "NUTRI-SETU",
+    image: "/nutrisetu.png",
+    description: "2025 Hackathon",
+    techStack: ["JavaScript", "CSS", "Netlify"],
+    link:"https://byteverse25v.netlify.app/"
   },
 ];
 

@@ -8,13 +8,7 @@ const projects = [
     techStack: ["React", "CSS", "Supabase"],
     link: "https://anuragchandra.netlify.app/"
   },
-  {
-    title: "NUTRI-SETU",
-    image: "/nutrisetu.png",
-    description: "2025 Hackathon",
-    techStack: ["JavaScript", "CSS", "Netlify"],
-    link:"https://byteverse25v.netlify.app/"
-  },
+
 ];
 
 const techColors = {
