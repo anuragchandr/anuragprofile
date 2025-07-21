@@ -8,6 +8,7 @@ const SplineEmbed = () => {
         width="100%"
         height="100%"
         allow="fullscreen"
+        loading="lazy"
       ></iframe>
     </div>
   );
