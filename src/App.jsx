@@ -21,9 +21,6 @@ function AppContent() {
       <VantaBg />
       <div className="home-container">
         <Home />
-        <div className="ads-container">
-          <AdsComponent slot="1234567890" />
-        </div>
       </div>
     </>
   );
