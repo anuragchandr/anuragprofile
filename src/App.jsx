@@ -13,6 +13,7 @@ import Home from './Home';
 import About from './components/about/About.jsx';
 import Contacts from './components/contact/Contacts';
 import ComingSoon from './components/blogs/ComingSoon.jsx';
+import Admin from './components/admin/Admin.jsx';
 
 function AppContent() {
   return (
@@ -78,6 +79,16 @@ function App() {
             </div>
           </>
         } />
+        <Route path="/admin" element={
+          <>
+            <Navbar />
+            <VantaBg />
+            <div className="home-container">
+              <Admin/>
+            </div>
+          </>
+        } />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>
   );
