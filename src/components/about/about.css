@@ -1,0 +1,398 @@
+/* About Section Layout */
+.about-section {
+  position: relative;
+  margin-top: 50px;
+}
+@media(max-width:991px){
+  .about-section {
+  position: relative;
+  margin-top: 0px;
+}
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+  background-color: rgba(30, 30, 60, 0.7);
+}
+
+.about-text {
+  padding-right: 30px;
+}
+
+.about-img {
+  text-align: right;
+}
+
+.about-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-text {
+    padding-right: 0;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  .about-img {
+    text-align: center;
+    padding-top: 30px !important;
+  }
+}
+
+
+
+.about-section .purple {
+  color: #6c63ff;
+  font-weight: bold;
+}
+
+
+
+.quote-card-view {
+  border: none;
+  color: white;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.blockquote {
+  font-size: 1.1rem;
+}
+
+.blockquote-footer {
+  color: #a588c0;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.about-activity {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.about-activity svg {
+  margin-right: 0.5rem;
+  color: #6c63ff;
+}
+
+.project-heading {
+  text-align: center;
+  padding: 50px 0 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.project-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: #6c63ff;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 50px 0;
+  }
+  
+  .about-img {
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+  }
+  
+  .project-heading {
+    padding: 30px 0 15px;
+  }
+}
+
+/* Techstack.css - Add these styles to your existing about.css file */
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  margin: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tech-icons svg {
+  font-size: 4.5em;
+  transition: all 0.3s ease;
+}
+
+
+
+/* Hover effects */
+.tech-icons:hover {
+  transform: translateY(-5px);
+}
+
+.tech-icons:hover svg {
+  transform: scale(1.1);
+}
+
+/* Tooltip effect */
+.tech-icons::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #343a40;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.tech-icons:hover::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tech-icons {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+  }
+  
+  .tech-icons svg {
+    font-size: 3em;
+  }
+  
+  .tech-icons::after {
+    font-size: 10px;
+    bottom: -25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-icons {
+    height: 60px;
+    width: 60px;
+    margin: 8px;
+  }
+  
+  .tech-icons svg {
+    font-size: 2.5em;
+  }
+}
+
+/* Toolstack.css - Add these styles to your existing about.css file */
+
+/* Github Calendar Styles - Add to your about.css file */
+
+/* Container for the GitHub calendar */
+.github-calendar {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Calendar grid styling */
+.react-github-calendar__calendar {
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow-x: auto;
+}
+
+/* Individual day blocks */
+.react-github-calendar__color-scale-1 { background-color: #ebedf0; }
+.react-github-calendar__color-scale-2 { background-color: #9be9a8; }
+.react-github-calendar__color-scale-3 { background-color: #40c463; }
+.react-github-calendar__color-scale-4 { background-color: #30a14e; }
+.react-github-calendar__color-scale-5 { background-color: #216e39; }
+
+/* Month and weekday labels */
+.react-github-calendar__month-label,
+.react-github-calendar__weekday-label {
+  fill: #6c757d;
+  font-size: 12px;
+}
+
+/* Legend styles */
+.react-github-calendar__legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.react-github-calendar__legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.react-github-calendar__legend-color {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+/* Tooltip styling */
+.react-github-calendar__tooltip {
+  position: absolute;
+  z-index: 999;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .github-calendar {
+    padding: 15px 0;
+  }
+  
+  .react-github-calendar__calendar {
+    padding: 15px 0;
+  }
+  
+  .react-github-calendar__month-label,
+  .react-github-calendar__weekday-label {
+    font-size: 10px;
+  }
+  
+  .react-github-calendar__legend {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .github-calendar {
+    padding: 10px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  }
+  
+  .react-github-calendar__calendar {
+    min-width: 300px;
+    padding: 10px 5px;
+  }
+  
+  .react-github-calendar__month-label {
+    display: none;
+  }
+}
+
+/* Toolstack.css - Add these styles to your existing about.css file */
+
+
+.tools-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.tech-icons-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.tech-icons-col svg {
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Brand-specific colors */
+.tech-icons-col .SiMacos { color: #000000; }
+.tech-icons-col .VscVscode { color: #007ACC; }
+.tech-icons-col .SiPostman { color: #FF6C37; }
+.tech-icons-col .SiSlack { color: #4A154B; }
+.tech-icons-col .SiVercel { color: #000000; }
+
+/* Hover effects */
+.tech-icons-col:hover svg {
+  transform: scale(1.2);
+}
+
+/* Tooltip */
+.tech-icons-col::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #343a40;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+.tech-icons-col:hover::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tools-row {
+    gap: 15px;
+    justify-content: flex-start;
+    padding-bottom: 30px;
+  }
+  
+  .tech-icons-col {
+    min-width: 70px;
+  }
+  
+  .tech-icons-col svg {
+    font-size: 2rem;
+  }
+  
+  .tech-icons-col::after {
+    bottom: -20px;
+    font-size: 10px;
+  }
+}
+
+.tools-section{
+    margin: 0 auto;
+  padding: 20px 0;
+  overflow-x: auto;
+}
+
+.github-calendar svg g rect:hover {
+  fill: #a855f7;
+  cursor: pointer;
+}
+

@@ -1,17 +1,97 @@
-import Header from './Header.jsx'
-import About from './About.jsx'
-//import Projects from './Projects.jsx'
-import Contacts from './Contacts.jsx'
+import React, { useEffect } from 'react';
+import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom';
+import Navbar from './components/Navbar';
+import VantaBg from './components/VantaBg';
+import Projects from './Projects';
+import Home from './Home';
+import About from './components/about/About.jsx';
+import Contacts from './components/contact/Contacts';
+import ComingSoon from './components/blogs/ComingSoon.jsx';
+import Admin from './components/admin/Admin.jsx';
 
+function AppContent() {
+  return (
+    <>
+      <Navbar />
+      <VantaBg />
+      <div className="home-container">
+        <Home />
+      </div>
+    </>
+  );
+}
 
 function App() {
   return (
-    <>
-      <Header/>
-      <About/>
-      <Contacts/>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<AppContent />} />
+        <Route path="/projects" element={
+          <>
+            <Navbar />
+            <VantaBg />
+            <div>
+              <Projects />
+            </div>
+          </>
+          
+        } />
+        <Route path="/about" element={
+          <>
+            <Navbar />
+            <VantaBg />
+            <div className="home-container">
+              <About />
+            </div>
+          </>
+        } />
+        <Route path="/contact" element={
+          <>
+            <Navbar />
+            <VantaBg />
+            <div className="home-container">
+              <Contacts/>
+            </div>
+          </>
+        } />
+        <Route path="/blogs" element={
+          <>
+            <Navbar />
+            <VantaBg />
+            <div className="home-container">
+             <ComingSoon/>
+            </div>
+          </>
+        } />
+        <Route path="/resume" element={
+
+          <>
+            <Navbar />
+            <VantaBg />
+            <div className="home-container">
+              <Home />
+            </div>
+          </>
+        } />
+        <Route path="/admin" element={
+          <>
+            <Navbar />
+            <VantaBg />
+            <div className="home-container">
+              <Admin/>
+            </div>
+          </>
+        } />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
