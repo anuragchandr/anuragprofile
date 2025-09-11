@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
-  useLocation,
 } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import VantaBg from './components/VantaBg';
@@ -14,6 +13,7 @@ import About from './components/about/About.jsx';
 import Contacts from './components/contact/Contacts';
 import ComingSoon from './components/blogs/ComingSoon.jsx';
 import Admin from './components/admin/Admin.jsx';
+import Currencyconvertor from './components/miniprojects/Currencyconvertor.jsx';
 
 function AppContent() {
   return (
@@ -29,7 +29,7 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppContent />} />
         <Route path="/projects" element={
@@ -42,6 +42,15 @@ function App() {
           </>
           
         } />
+        <Route path='/projects/currency-convertor' element={
+          <>
+            <Navbar />
+            <div className="home-container">
+              <Currencyconvertor />
+            </div>
+          </>
+        } />
+
         <Route path="/about" element={
           <>
             <Navbar />
@@ -90,7 +99,7 @@ function App() {
         } />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

@@ -2,13 +2,6 @@ import React from "react";
 import './styles.css'
 const projects = [
   {
-    title: "EFFICA",
-    image: "/effica.png",
-    description: "Showcasing Skills",
-    techStack: ["React", "express", "MongoDB","JavaScript"],
-    link: "https://efficaprojects.netlify.app/"
-  },
-  {
     title: "VigilEyes",
     image: "/vigileyes.png",
     description: "An AI-Powered platform for criminal activity report and analysis",
