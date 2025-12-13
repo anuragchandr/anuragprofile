@@ -1,5 +1,6 @@
 import React from "react";
 import './styles.css'
+import { link } from "framer-motion/client";
 const projects = [
   {
     title: "VigilEyes",

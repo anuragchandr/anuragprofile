@@ -40,10 +40,10 @@ function Contacts() {
         <ul className="contact-list">
           <li><a href="https://github.com/anuragchandr" className="contact-link"><FaGithub /> GitHub</a></li>
           <li><a href="https://www.linkedin.com/in/anurag-chandra-a4553a317/" className="contact-link"><SiLinkedin /> LinkedIn</a></li>
-          <li><a href="mailto:nrgchandra@gmsil.com" className="contact-link"><FaEnvelope /> Email</a></li>
+          <li><a href="mailto:nrgchandra@gmail.com" className="contact-link"><FaEnvelope /> Email</a></li>
           <li><a href="tel:+911111111111" className="contact-link"><FaPhone /> Phone</a></li>
           <li><a href="https://www.facebook.com/" className="contact-link"><FaFacebook /> Facebook</a></li>
-          <li><a href="https://www.instagram.com/anuragchandra.ec/" className="contact-link"><FaInstagram /> Instagram</a></li>
+          <li><a href="https://www.instagram.com/anuragchandrra/" className="contact-link"><FaInstagram /> Instagram</a></li>
           <li><a href="https://www.twitter.com/" className="contact-link"><FaTwitter /> Twitter</a></li>
           <li><a href="https://www.youtube.com/@shorts_circuit" className="contact-link"><FaYoutube /> YouTube</a></li>
         </ul>

@@ -33,8 +33,6 @@ function Card({ title, image, description, techStack, link }) {
   return (
     <a
       href={link}
-      target="_blank"
-      rel="noopener noreferrer"
       className="c_1_cardWrap"
     >
       <div className="forhover">
