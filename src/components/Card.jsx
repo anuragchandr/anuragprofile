@@ -12,7 +12,7 @@ const projects = [
     title: "Currency Convertor",
     image: "/currconver.png",
     description: "mini currency converter app built with React",
-    link: "https://anuragprofile.netlify.app/projects/currency-convertor/",
+    link: "https://anuragchandra.netlify.app/projects/currency-convertor",
     techStack: ["React", "CSS", "JavaScript"]
   }
 
