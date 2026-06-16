@@ -19,9 +19,9 @@ I build sleek, responsive web interfaces and explore intelligent systems—mergi
 
 | Frontend        | Backend           | Tools & Platforms      |
 |----------------|-------------------|-------------------------|
-| React          | Supabase,         | Git,  Vite              |
-| CSS            | Node.js           | GitHub, Netlify         |
-|                | APIs              | VSCode, Figma           |
+| React          | UI-only           | Git,  Vite              |
+| CSS            | None              | GitHub, Netlify         |
+|                |                   | VSCode, Figma           |
 
 ---
 
@@ -56,7 +56,7 @@ Welcome to the curated collection of my recent development work. Each project re
 
 ### 🎨 [PORTFOLIO](https://anuragchandra.netlify.app/projects)
 > A stylish portfolio site showcasing modern web skills.  
-> **Tech Stack:** React · CSS · Supabase  
+> **Tech Stack:** React · CSS · UI-only  
 > **Highlights:**  
 > - Sleek UI design and layout  
 > - Seamless project display  
@@ -65,8 +65,8 @@ Welcome to the curated collection of my recent development work. Each project re
 ---
 
 ### 🔍 [IMPACT](https://anuragchandra.netlify.app/projects)
- An interactive platform pushing innovation with real-world functionality.  
- **Tech Stack:** React · Express · MongoDB 
+ An interactive platform pushing innovation with frontend-only UI.  
+ **Tech Stack:** React · UI-only 
 
 ---
 

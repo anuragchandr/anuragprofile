@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './contact.css';
 import { SiLinkedin } from "react-icons/si";
 import { FaGithub, FaEnvelope, FaPhone, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { supabase } from './supabaseClient'; // make sure the path is correct
 
 function Contacts() {
   const [formData, setFormData] = useState({
@@ -16,21 +15,10 @@ function Contacts() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('Sending...');
-
-    const { error } = await supabase
-      .from('contact_messages')
-      .insert([formData]);
-
-    if (error) {
-      console.error(error);
-      setStatus('Failed to send message.');
-    } else {
-      setStatus('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' });
-    }
+    setStatus('Message saved locally. No backend is connected.');
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (

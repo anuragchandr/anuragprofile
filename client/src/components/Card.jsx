@@ -5,7 +5,7 @@ const projects = [
     title: "PORTFOLIO",
     image: "/portfolio.png",
     description: "Showcasing Skills",
-    techStack: ["React", "CSS", "Supabase"],
+    techStack: ["React", "CSS", "MongoDB"],
     link: "https://anuragchandra.netlify.app/"
   },
 
