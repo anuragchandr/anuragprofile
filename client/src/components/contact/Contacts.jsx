@@ -3,6 +3,12 @@ import './contact.css';
 import { SiLinkedin } from "react-icons/si";
 import { FaGithub, FaEnvelope, FaPhone, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
+const BACKEND_URL =
+  `${import.meta.env.VITE_BACKEND_URL}/submit`;
+
+console.log(BACKEND_URL);
+
+
 function Contacts() {
   const [formData, setFormData] = useState({
     name: '',
@@ -15,9 +21,38 @@ function Contacts() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Message saved locally. No backend is connected.');
+    try {
+    const response = await fetch(BACKEND_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+        if (response.ok) {
+
+            setStatus(data.message);
+
+            setFormData({
+                name: '',
+                email: '',
+                message: '',
+            });
+
+        }else {
+            setStatus(data.message || 'Failed to send message');
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        setStatus('Server error. Try again later.');
+    }
+    setStatus('Message sent successfully.');
     setFormData({ name: '', email: '', message: '' });
   };
 
