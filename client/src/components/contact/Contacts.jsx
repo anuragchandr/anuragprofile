@@ -6,7 +6,6 @@ import { FaGithub, FaEnvelope, FaPhone, FaFacebook, FaInstagram, FaTwitter, FaYo
 const BACKEND_URL =
   `${import.meta.env.VITE_BACKEND_URL}/submit`;
 
-console.log(BACKEND_URL);
 
 
 function Contacts() {
