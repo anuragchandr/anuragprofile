@@ -3,7 +3,7 @@ const portfolio = {
   name: 'Anurag Chandra',
   roles: ['build backend systems.', 'ship AI products.', 'design for scale.', 'solve hard problems.'],
   summary: 'ECE student at NIT Patna turning ideas into working systems: RAG pipelines, FastAPI services, and full-stack apps, from hackathon prototypes to SaaS.',
-  links: { github: 'https://github.com/anuragchandr', linkedin: 'https://linkedin.com/in/anuragchandra', email: 'mailto:nrgchandra@gmail.com', codechef: 'https://www.codechef.com/users/nrgchandra' },
+  links: { github: 'https://github.com/anuragchandr', linkedin: 'https://linkedin.com/in/anurag-chandra-a4553a317', email: 'mailto:nrgchandra@gmail.com', codechef: 'https://www.codechef.com/users/nrgchandra' },
   about: [
     "I'm a second-year Electronics & Communication student at NIT Patna who spends most of his time on the software side: backends, APIs and applied AI.",
     "I like projects with real constraints: a hackathon clock, a robot that has to report telemetry, or a support bot that must answer from a company's own knowledge base instead of guessing.",
