@@ -15,9 +15,14 @@ SKILLS
 - Core CS: DSA, OOP, DBMS
 
 PROJECTS
-- JTrack: full-stack job application tracker (submission to offer). Has a job-description matching engine that analyses postings and suggests tailored resume improvements. Data model supports multiple applications, statuses and per-job suggestion history.
+- NextCall: full-stack job application tracker (submission to offer). Has a job-description matching engine that analyses postings and suggests tailored resume improvements. Data model supports multiple applications, statuses and per-job suggestion history.
 - SupportAI: solo-designed B2B AI SaaS for customer support and lead capture for SMBs. Covers auth, knowledge base and a website chat widget. pgvector-based RAG pipeline for the AI chat engine, WhatsApp integration, and a detailed developer build plan with full PostgreSQL schema.
 - Sevasarathi (AGV Fleet Monitoring Portal): built for the 5G Innovation Hackathon 2026 (Top 50 national finalist team). Next.js + FastAPI + OpenCV. Web portal for real-time monitoring of an indoor AGV fleet, a ROS 2-to-HTTP bridge for live telemetry, and a prototype of real-time indoor object detection for AGV navigation.
+
+LINKS
+- NextCall GitHub: https://github.com/anuragchandr/nextCall
+- SupportAI GitHub: https://github.com/anuragchandr/supportAI
+- Sevasarathi demo: https://drive.google.com/file/d/1ErFxxV5CohinFhe8jFfW99ts1naSuNtr/view?usp=drive_link
 
 ACHIEVEMENTS
 - Top 50 National Finalist, 5G Innovation Hackathon 2026

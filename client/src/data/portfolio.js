@@ -3,7 +3,7 @@ const portfolio = {
   name: 'Anurag Chandra',
   roles: ['build backend systems.', 'ship AI products.', 'design for scale.', 'solve hard problems.'],
   summary: 'ECE student at NIT Patna turning ideas into working systems: RAG pipelines, FastAPI services, and full-stack apps, from hackathon prototypes to SaaS.',
-  links: { github: 'https://github.com/anuragchandr', linkedin: 'https://linkedin.com/in/anuragchandra', email: 'mailto:nrgchandra@gmail.com' },
+  links: { github: 'https://github.com/anuragchandr', linkedin: 'https://linkedin.com/in/anuragchandra', email: 'mailto:nrgchandra@gmail.com', codechef: 'https://www.codechef.com/users/nrgchandra' },
   about: [
     "I'm a second-year Electronics & Communication student at NIT Patna who spends most of his time on the software side: backends, APIs and applied AI.",
     "I like projects with real constraints: a hackathon clock, a robot that has to report telemetry, or a support bot that must answer from a company's own knowledge base instead of guessing.",
@@ -25,10 +25,16 @@ const portfolio = {
   },
   projects: [
     { title: 'SupportAI', tag: 'B2B AI SaaS', stack: ['PostgreSQL', 'pgvector', 'RAG', 'WhatsApp'],
+      github: 'https://github.com/anuragchandr/supportAI',
+      demo: null,
       points: ['Solo-designed a support and lead-capture platform for SMBs: auth, knowledge base and an embeddable website chat widget.', 'Architected a pgvector RAG pipeline for the chat engine, plus a WhatsApp integration.', 'Wrote the full developer build plan and PostgreSQL schema.'] },
     { title: 'Sevasarathi', tag: '5G Innovation Hackathon 2026 · Top 50 national finalist', stack: ['Next.js', 'FastAPI', 'OpenCV', 'ROS 2'],
+      github: null,
+      demo: 'https://drive.google.com/file/d/1ErFxxV5CohinFhe8jFfW99ts1naSuNtr/view?usp=drive_link',
       points: ['Web portal for real-time monitoring and management of an indoor AGV fleet.', 'ROS 2-to-HTTP bridge streaming live AGV telemetry.', 'Prototyped indoor object detection for AGV navigation with OpenCV and deep learning.'] },
-    { title: 'JTrack', tag: 'Full-stack', stack: ['Tracker', 'JD matching'],
+    { title: 'NextCall', tag: 'Full-stack', stack: ['Tracker', 'JD matching'],
+      github: 'https://github.com/anuragchandr/nextCall',
+      demo: null,
       points: ['Tracks job applications end to end, from submission to offer.', 'Matching engine analyses a job description and suggests tailored resume improvements.', 'Data model keeps statuses and per-job suggestion history.'] },
   ],
   journey: [

@@ -8,6 +8,7 @@ dotenv.config();
 import connectDB from './configs/dbconfig.js';
 import Message from './modals/messages.js';
 import chatRouter from './chat.js';
+import statsRouter from './routes/stats.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -43,7 +44,11 @@ const chatLimiter = rateLimit({
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
+// Stats are cached for an hour in the route, so this limiter is just a safety net.
+const statsLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 60, standardHeaders: 'draft-8', legacyHeaders: false, ipv6Subnet: 56 });
+
 app.use('/chat', chatLimiter, chatRouter);
+app.use('/stats', statsLimiter, statsRouter);
 
 app.post('/submit', contactLimiter, async (req, res) => {
   try {

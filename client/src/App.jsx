@@ -1,12 +1,27 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useSpring, useInView, animate } from 'framer-motion';
+import { motion, MotionConfig, useScroll, useSpring, useInView, animate } from 'framer-motion';
+import './theme';
 import portfolio from './data/portfolio';
 import TicTacToe from './components/TicTacToe';
 import ChatWidget from './components/chat/ChatWidget';
+import ThemeToggle from './components/ThemeToggle';
+import LiveStats from './components/LiveStats';
 import './site.css';
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 const NAV = ['about', 'skills', 'projects', 'journey', 'play', 'contact'];
+const TECH_LOGOS = [
+  { name: 'React', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Next.js', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+  { name: 'Node.js', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+  { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'C++', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+  { name: 'FastAPI', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
+  { name: 'MongoDB', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+  { name: 'PostgreSQL', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'Docker', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+  { name: 'Git', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+];
 
 const Reveal = ({ children, delay = 0, className }) => (
   <motion.div className={className} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
@@ -75,27 +90,51 @@ function ContactForm() {
   );
 }
 
+function NotFoundPage() {
+  return (
+    <main className="section not-found-wrap">
+      <Reveal className="card not-found-card">
+        <p className="kicker">404</p>
+        <h2>Page not found</h2>
+        <p className="body">The page you were looking for does not exist.</p>
+        <div className="cta">
+          <a className="btn" href="/">Back home</a>
+        </div>
+      </Reveal>
+    </main>
+  );
+}
+
 export default function App() {
   const p = portfolio;
   const typed = useTypewriter(p.roles);
   const [active, setActive] = useState('');
+  const [path, setPath] = useState(() => (typeof window !== 'undefined' ? window.location.pathname : '/'));
   const { scrollYProgress } = useScroll();
   const bar = useSpring(scrollYProgress, { stiffness: 120, damping: 24 });
 
   useEffect(() => {
+    const syncPath = () => setPath(window.location.pathname);
     const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)), { rootMargin: '-45% 0px -50% 0px' });
     NAV.forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
-    return () => io.disconnect();
+    window.addEventListener('popstate', syncPath);
+    return () => { io.disconnect(); window.removeEventListener('popstate', syncPath); };
   }, []);
 
+  const normalizedPath = path.replace(/\/+$/, '') || '/';
+  const allowedRoutes = new Set(['/', '/about', '/skills', '/projects', '/journey', '/play', '/contact']);
+  if (!allowedRoutes.has(normalizedPath)) {
+    return <NotFoundPage />;
+  }
+
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <motion.div className="progress" style={{ scaleX: bar }} />
       <div className="orb o1" /><div className="orb o2" />
 
       <nav className="nav">
         <a href="#top" className="logo">AC<span>.</span></a>
-        <div>{NAV.map((n) => <a key={n} href={`#${n}`} className={active === n ? 'act' : ''}>{n}</a>)}</div>
+        <div>{NAV.map((n) => <a key={n} href={`#${n}`} className={active === n ? 'act' : ''}>{n}</a>)}<ThemeToggle /></div>
       </nav>
 
       <header id="top" className="hero">
@@ -116,6 +155,7 @@ export default function App() {
             <Reveal>{p.about.map((t) => <p key={t} className="body">{t}</p>)}</Reveal>
             <div className="stats">{p.stats.map((s) => <Reveal key={s.label}><Stat {...s} /></Reveal>)}</div>
           </div>
+          <LiveStats />
         </Section>
 
         <Section id="skills" kicker="02 · Skills" title="The toolbox">
@@ -129,6 +169,14 @@ export default function App() {
           </div>
         </Section>
 
+        <div className="section tech-showcase">
+          <div className="logo-row logo-row--icons">
+            {TECH_LOGOS.map(({ name, src }) => (
+              <img key={name} src={src} alt={name} title={name} className="logo-badge" />
+            ))}
+          </div>
+        </div>
+
         <Section id="projects" kicker="03 · Projects" title="Things I've built">
           <div className="projects">
             {p.projects.map((pr, i) => (
@@ -137,6 +185,10 @@ export default function App() {
                 <h3>{pr.title}</h3>
                 <ul>{pr.points.map((t) => <li key={t}>{t}</li>)}</ul>
                 <div className="tags">{pr.stack.map((s) => <span key={s}>{s}</span>)}</div>
+                <div className="cta project-actions">
+                  {pr.github && <a className="btn ghost sm" href={pr.github} target="_blank" rel="noreferrer">GitHub ↗</a>}
+                  {pr.demo && <a className="btn sm" href={pr.demo} target="_blank" rel="noreferrer">Deployment ↗</a>}
+                </div>
               </Reveal>
             ))}
           </div>
@@ -182,6 +234,6 @@ export default function App() {
 
       <footer className="foot">© {new Date().getFullYear()} {p.name} · Built with React</footer>
       <ChatWidget />
-    </>
+    </MotionConfig>
   );
 }
