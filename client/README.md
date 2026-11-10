@@ -1,116 +1,163 @@
-# 💫 Anurag Chandra
+# Anurag Chandra Portfolio
 
-### 👨‍💻 Aspiring Engineer & Creative Developer  
-I build sleek, responsive web interfaces and explore intelligent systems—merging design, logic, and curiosity to create digital experiences that grow with me.
+A React + Express portfolio for showcasing engineering projects, AI work, and backend system experience.
 
----
+## Overview
 
-## 🚀 About Me
+This site includes:
 
-- 🧠 Passionate about combining **functionality** with **immersive design**
-- 🌐 Specialize in **React**, **CPP**, and **React Native**
-- 🛠️ Love solving complex problems in **C++**, especially in algorithms and memory optimization
-- 🎨 Advocate for dark mode, gradients, and elegant UI animations
-- 📈 Strive for clean, scalable code and developer workflow mastery
+- portfolio landing page with sections for projects, skills, and journey
+- live stats from GitHub, LeetCode, and CodeChef
+- contact form with MongoDB persistence
+- AI assistant chat powered by Gemini
+- analytics tracking with consent-based privacy controls
+- protected dashboard for admin review of saved data
+- SEO files for Search Console indexing
 
----
+## Stack
 
-## 🛠️ Tech Stack
+Frontend
+- React
+- Vite
+- Framer Motion
+- CSS modules / custom CSS
 
-| Frontend        | Backend           | Tools & Platforms      |
-|----------------|-------------------|-------------------------|
-| React          | UI-only           | Git,  Vite              |
-| CSS            | None              | GitHub, Netlify         |
-|                |                   | VSCode, Figma           |
+Backend
+- Node.js
+- Express
+- MongoDB with Mongoose
 
----
+## Project structure
 
-## 📌 Featured Projects
+```text
+anuragprofile/
+├── client/
+│   ├── public/
+│   ├── src/
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+├── server/
+│   ├── configs/
+│   ├── modals/
+│   ├── routes/
+│   ├── chat.js
+│   ├── index.js
+│   └── package.json
+├── README.md
+└── .gitignore
+```
 
-### ⚡ [anuragchandra.netlify.app](https://anuragchandra.netlify.app/)
-> Personal portfolio showcasing creative UI and elegant dev flow  
-> - 💎 Stylish theming (dark mode toggle, gradients)  
-> - 🚀 Optimized status bar and icon colors  
-> - 📱 Built for smooth mobile experiences and fast reloads
+## Local setup
 
----
+### 1) Install dependencies
 
-## 📬 Contact Me
+Frontend:
 
-Feel free to reach out for collaborations, questions, or just a friendly hello!
+```bash
+cd anuragprofile/client
+npm install
+```
 
-- 📧 Email: `nrgchandra@gmail.com`
-- 🐙 GitHub: [@anuragchandr](https://github.com/anuragchandr)
-- 🌐 Website: [anuragchandra.netlify.app](https://anuragchandra.netlify.app/)
+Backend:
 
----
+```bash
+cd anuragprofile/server
+npm install
+```
 
-> “Design is not just what it looks like and feels like. Design is how it works.” – Steve Jobs
-# 🚀 My Project Showcase
+### 2) Environment variables
 
-Welcome to the curated collection of my recent development work. Each project reflects a blend of functionality, design, and purpose—crafted with technologies I love.
+Frontend `.env`:
 
----
+```bash
+VITE_API_URL=http://localhost:3000
+```
 
-## 🔧 Projects
+Backend `.env`:
 
-### 🎨 [PORTFOLIO](https://anuragchandra.netlify.app/projects)
-> A stylish portfolio site showcasing modern web skills.  
-> **Tech Stack:** React · CSS · UI-only  
-> **Highlights:**  
-> - Sleek UI design and layout  
-> - Seamless project display  
-> - Dynamic content integration
+```bash
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/anuragprofile
+CLIENT_ORIGIN=http://localhost:5173
+GEMINI_API_KEY=your_gemini_key
+GITHUB_USERNAME=anuragchandr
+LEETCODE_USERNAME=nrgchandra
+CODECHEF_USERNAME=nrgchandra
+```
 
----
+### 3) Run app
 
-### 🔍 [IMPACT](https://anuragchandra.netlify.app/projects)
- An interactive platform pushing innovation with frontend-only UI.  
- **Tech Stack:** React · UI-only 
+Backend:
 
----
+```bash
+cd anuragprofile/server
+npm run dev
+```
 
-### 🧬 [NUTRI-SETU](https://anuragchandra.netlify.app/projects) – Hackathon 2025
-> Nutritional solution designed during a fast-paced hackathon.  
-> **Tech Stack:** JavaScript · CSS · Netlify  
-> **Highlights:**  
-> - Clean data flow  
-> - Fast deployment  
-> - Hackathon-ready UX
+Frontend:
 
----
+```bash
+cd anuragprofile/client
+npm run dev
+```
 
-### ⚡ [SPARK](https://anuragchandra.netlify.app/projects)
- Igniting ideas with AI-enhanced creativity.  
- **Tech Stack:** JavaScript  
- **Highlights:**  
- - AI integrations  
- - Ideation workflows  
-- Sleek interface
+## Admin dashboard
 
----
+Open:
 
-### 🔐 [VigilEyes](https://anuragchandra.netlify.app/projects)
-> An AI-powered platform for criminal activity reporting and analysis.  
-> **Tech Stack:** Leaflet · JavaScript · Vercel  
-> **Highlights:**  
-> - Map-based visual analytics  
-> - Secure reporting flow  
-> - Smart incident tracking
+```text
+http://localhost:3000/dashboard
+```
 
----
+Credentials:
 
-## 🧠 Why These Matter
+- username: `nrgchandra`
+- password: `160802`
 
-Each project helped me explore a unique aspect of development—from problem-solving and API integrations to UI/UX mastery and deployment strategy. These represent my ongoing journey to build impactful and usable tech.
+The dashboard shows:
 
----
-![Coding Gif](https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif) 
->![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuragchandr&show_icons=true&theme=radical)
--![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuragchandr&layout=compact&theme=radical)
-![Profile views](https://komarev.com/ghpvc/?username=anuragchandr)
-[![GitHub Streak](https://streak-stats.demolab.com/?user=anuragchandr)](https://git.io/streak-stats)
-![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=for-the-badge)
-![C++](https://img.shields.io/badge/-C++-00599C?logo=c%2B%2B&logoColor=white&style=for-the-badge)
-![React Native](https://img.shields.io/badge/-React%20Native-20232A?logo=react&logoColor=white&style=for-the-badge) 
+- contact messages
+- chat logs
+- website visits
+- server request logs
+
+## Privacy and analytics
+
+The site uses a cookie consent toast. Visitors can choose:
+
+- Essential only
+- Accept analytics
+
+Analytics are only submitted after consent is granted.
+
+## SEO
+
+The project includes:
+
+- `robots.txt`
+- `sitemap.xml`
+- canonical tag in `index.html`
+- manifest file for web app support
+
+## Deployment
+
+Deploy the frontend separately from the backend.
+
+Typical setup:
+
+- Frontend: Netlify / Vercel / Cloudflare Pages
+- Backend: Render / Railway / VPS
+
+Set your production API URL in the frontend environment variables.
+
+## Useful links
+
+- Main website: `https://anuragchandra.in`
+- Resume: `/resume.pdf`
+- GitHub: `https://github.com/anuragchandr`
+
+## Notes
+
+This portfolio is designed for personal branding and professional presentation. Keep sensitive data and internal credentials protected in the deployed environment.
 
