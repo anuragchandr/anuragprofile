@@ -1,0 +1,10 @@
+{
+  "name": "Anurag Chandra",
+  "short_name": "Anurag",
+  "description": "Portfolio of Anurag Chandra — backend, AI/ML, and full-stack development work.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b10",
+  "theme_color": "#070b10",
+  "icons": []
+}
