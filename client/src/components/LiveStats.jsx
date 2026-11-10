@@ -12,7 +12,7 @@ const fallbackStats = {
     url: 'https://www.codechef.com/users/nrgchandra',
     rating: 1426,
     highestRating: 1426,
-    stars: '★★★',
+    stars: '★★',
     division: 'Div 3',
     globalRank: 1174,
     countryRank: null,

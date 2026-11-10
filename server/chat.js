@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import knowledge from './data/knowledge.js';
+import { ChatLog } from './modals/siteData.js';
 
 const router = Router();
 
@@ -61,7 +62,25 @@ router.post('/', async (req, res) => {
 
     const data = await r.json();
     const reply = data.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('').trim();
-    return res.json({ reply: reply || "I couldn't answer that one. Try rephrasing, or email Anurag directly." });
+    const finalReply = reply || "I couldn't answer that one. Try rephrasing, or email Anurag directly.";
+
+    try {
+      const sessionId = req.headers['x-session-id'] || req.ip || 'guest-session';
+      await ChatLog.create({
+        sessionId: String(sessionId),
+        messages: raw.slice(-MAX_MESSAGES).map((m) => ({
+          role: m.role === 'assistant' ? 'assistant' : 'user',
+          content: String(m.content || '').slice(0, MAX_CHARS),
+        })),
+        reply: finalReply,
+        userAgent: req.get('user-agent') || '',
+        ip: req.ip || req.socket?.remoteAddress || 'unknown',
+      });
+    } catch (error) {
+      console.error('Chat save failure:', error.message || error);
+    }
+
+    return res.json({ reply: finalReply });
   } catch (err) {
     console.error('Chat failure:', err.name);
     return res.status(502).json({ error: 'The assistant is unavailable.' });

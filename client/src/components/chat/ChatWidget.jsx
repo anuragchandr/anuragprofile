@@ -5,12 +5,25 @@ import './chat.css';
 const API = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 const { title, greeting, presets } = portfolio.chat;
 
+function getSessionId() {
+  if (typeof window === 'undefined') return 'guest-session';
+
+  let sessionId = window.sessionStorage.getItem('portfolio-session-id');
+  if (!sessionId) {
+    sessionId = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `guest-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    window.sessionStorage.setItem('portfolio-session-id', sessionId);
+  }
+
+  return sessionId;
+}
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([{ role: 'assistant', content: greeting }]);
   const endRef = useRef(null);
+  const sessionIdRef = useRef(getSessionId());
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -28,7 +41,10 @@ export default function ChatWidget() {
     try {
       const res = await fetch(`${API}/chat`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-session-id': sessionIdRef.current,
+        },
         // skip the local greeting; the server wants history starting with a user turn
         body: JSON.stringify({ messages: next.slice(1) }),
       });

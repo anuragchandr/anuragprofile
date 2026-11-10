@@ -90,6 +90,23 @@ function ContactForm() {
   );
 }
 
+function CookieConsentToast({ onChoose, visible }) {
+  if (!visible) return null;
+
+  return (
+    <div className="cookie-toast" role="dialog" aria-live="polite" aria-label="Privacy and cookie notice">
+      <div className="cookie-copy">
+        <strong>Privacy &amp; cookies</strong>
+        <p>We use essential cookies for site security and optional analytics to understand traffic trends. No personal data is sold.</p>
+      </div>
+      <div className="cookie-actions">
+        <button type="button" className="btn ghost sm" onClick={() => onChoose('essential')}>Only essential</button>
+        <button type="button" className="btn sm" onClick={() => onChoose('accepted')}>Accept analytics</button>
+      </div>
+    </div>
+  );
+}
+
 function NotFoundPage() {
   return (
     <main className="section not-found-wrap">
@@ -110,6 +127,11 @@ export default function App() {
   const typed = useTypewriter(p.roles);
   const [active, setActive] = useState('');
   const [path, setPath] = useState(() => (typeof window !== 'undefined' ? window.location.pathname : '/'));
+  const [cookieChoice, setCookieChoice] = useState(() => {
+    if (typeof window === 'undefined') return 'unknown';
+    return window.localStorage.getItem('portfolio-cookie-consent') || 'unknown';
+  });
+  const trackedVisit = useRef(false);
   const { scrollYProgress } = useScroll();
   const bar = useSpring(scrollYProgress, { stiffness: 120, damping: 24 });
 
@@ -120,6 +142,32 @@ export default function App() {
     window.addEventListener('popstate', syncPath);
     return () => { io.disconnect(); window.removeEventListener('popstate', syncPath); };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (cookieChoice === 'unknown') return;
+    window.localStorage.setItem('portfolio-cookie-consent', cookieChoice);
+  }, [cookieChoice]);
+
+  useEffect(() => {
+    if (cookieChoice !== 'accepted' || trackedVisit.current || typeof window === 'undefined') return;
+    trackedVisit.current = true;
+    const payload = {
+      sessionId: window.sessionStorage.getItem('portfolio-session-id') || 'guest',
+      path: window.location.pathname,
+      url: window.location.href,
+      referrer: document.referrer || '',
+      userAgent: navigator.userAgent,
+      language: navigator.language,
+      deviceType: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+    };
+
+    fetch(`${API}/api/analytics/visit`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }).catch(() => {});
+  }, [cookieChoice]);
 
   const normalizedPath = path.replace(/\/+$/, '') || '/';
   const allowedRoutes = new Set(['/', '/about', '/skills', '/projects', '/journey', '/play', '/contact']);
@@ -233,6 +281,10 @@ export default function App() {
       </main>
 
       <footer className="foot">© {new Date().getFullYear()} {p.name} · Built with React</footer>
+      <CookieConsentToast
+        visible={cookieChoice === 'unknown'}
+        onChoose={(value) => setCookieChoice(value)}
+      />
       <ChatWidget />
     </MotionConfig>
   );
